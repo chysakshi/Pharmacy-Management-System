@@ -1,0 +1,78 @@
+<div class="header">
+  <app-header></app-header>
+</div>
+
+
+<div class="body">
+  <app-image-slider></app-image-slider>
+<div class="container">
+
+  <div class="row height d-flex justify-content-center align-items-center">
+
+    <div class="col-md-8">
+
+      <form name="form">
+        <div class="search">
+          <i class="fa fa-search"></i>
+            <input type="text" class="form-control"[(ngModel)]="searchText" name="drugs"  placeholder="Search for Medicines/..." #drugs="ngModel">
+        </div>
+
+      </form>
+    
+      
+    </div>
+    
+  </div>
+
+  
+
+  <h1 style="font-weight: bold; font-size: 35px;">What are you looking for?</h1>
+
+  <h2 class="second-pg">
+    CATEGORIES
+  </h2>
+
+
+
+  <div class="carousel slide" >
+    <div class="cards-wrapper">
+      <div class="card" *ngFor="let a of arr1">
+        <div class="card-body">
+          <h5 class="card-title">{{a.categories}}</h5>
+          <p class="card-text">{{a.description}}</p>
+          <a (click)="cat(a)" class="btn btn-primary">View</a>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" role="button" appCatPrev data-slide="appCatPrev">
+      <i class="fas fa-angle-left fa-2x"></i></a>
+    <a class="carousel-control-next" role="button" appCatNext data-slide="appCatNext">
+      <i class="fas fa-angle-right fa-2x"></i></a>
+   </div>
+
+   <div class="sub-container">
+
+    <h1 style="font-weight: bold; font-size: 35px;">Shop Your Medicines</h1>
+    <br><br>
+
+    <app-shop></app-shop>
+    
+   </div>
+
+  
+
+</div>
+
+
+
+
+
+</div>
+<div>
+  <app-footer></app-footer>
+</div>
+
+
+<app-login-controller></app-login-controller>
+
+<app-register-controller></app-register-controller>
